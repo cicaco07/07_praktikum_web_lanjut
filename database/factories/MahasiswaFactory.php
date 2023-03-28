@@ -14,14 +14,16 @@ class MahasiswaFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
         return [
-            'nim'       => $this->faker->randomDigit(),
-            'nama'      => $this->faker->name(),
-            'kelas'     => $this->faker->randomDigit(),
-            'jurusan'   => $this->faker->randomDigit(),
-            'no_hp'     => $this->faker->phoneNumber(),
+            'nim'           => $this->faker->unique()->numberBetween(2141720001,2141720999),
+            'nama'          => $this->faker->name(),
+            'tanggal_lahir' => $this->faker->dateTimeThisCentury()->format('d-m-Y'),
+            'email'         => $this->faker->email(),
+            'kelas'         => $this->faker->randomElement(['2A', '2B', '2C', '2D', '2E', '2F', '2G', '2H', '2I']),
+            'jurusan'       => $this->faker->randomElement(['Teknologi Informasi','Teknik Mesin', 'Teknik Sipil']),
+            'no_hp'         => $this->faker->phoneNumber()
         ];
     }
 }

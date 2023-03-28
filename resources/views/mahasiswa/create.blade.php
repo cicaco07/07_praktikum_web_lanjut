@@ -29,6 +29,14 @@
                         <input type="nama" name="nama" class="formcontrol" id="nama" aria-describedby="nama" >
                     </div>
                     <div class="form-group">
+                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                        <input type="tanggal_lahir" name="tanggal_lahir" class="formcontrol" id="tanggal_lahir" aria-describedby="tanggal_lahir">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="formcontrol" id="email" aria-describedby="email">
+                    </div>
+                    <div class="form-group">
                         <label for="kelas">Kelas</label>
                         <input type="kelas" name="kelas" class="formcontrol" id="kelas" aria-describedby="password" >
                     </div>
