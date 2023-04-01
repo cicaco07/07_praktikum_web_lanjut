@@ -54,6 +54,6 @@
     </tr>
     @endforeach
     </table>
-    {{ $mahasiswa->links() }}
+    {{ $mahasiswa->withQueryString()->links() }}
 </div>
 @endsection
