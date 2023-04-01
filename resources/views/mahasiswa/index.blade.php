@@ -5,6 +5,12 @@
             <div class="pull-left mt-2">
             <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
             </div>
+            <div class="pb-3">
+                <form class="d-flex" action="{{ url('mahasiswa') }}" method="get">
+                    <input class="form-control me-1" type="search" name="search" value="{{ Request::get('search') }}" placeholder="search" aria-label="Search">
+                    <button class="btn btn-secondary" type="submit">Cari</button>
+                </form>
+            </div>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>
             </div>

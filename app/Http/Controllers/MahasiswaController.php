@@ -11,10 +11,19 @@ class MahasiswaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        //pencarian
+        $search = $request->search;
+        if(strlen($search)){
+            $mahasiswa = Mahasiswa::where('nim','like',"%$search%")
+            ->orWhere('nama', 'like' , "%$search%")
+            ->orWhere('email', 'like' ,"%$search%")
+            ->paginate(5);
+        } else {
+            $mahasiswa = DB::table('mahasiswa')->paginate(5);
+        }
         //fungsi eloquent menampilkan data menggunakan pagination
-        $mahasiswa = DB::table('mahasiswa')->paginate(5);
         return view('mahasiswa.index', ['mahasiswa'=>$mahasiswa]);
     }
 
